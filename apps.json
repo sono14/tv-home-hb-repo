@@ -1,0 +1,30 @@
+{
+  "paging": {
+    "page": 1,
+    "count": 1,
+    "maxPage": 1,
+    "itemsTotal": 1
+  },
+  "packages": [
+    {
+      "id": "com.example.tvhome",
+      "title": "TV Home",
+      "iconUri": "icon.png",
+      "shortDescription": "A remote-first webOS TV home screen",
+      "manifest": {
+        "id": "com.example.tvhome",
+        "version": "1.0.0",
+        "type": "web",
+        "title": "TV Home",
+        "appDescription": "A remote-first home screen for webOS TV",
+        "iconUri": "icon.png",
+        "rootRequired": false,
+        "ipkUrl": "com.example.tvhome_1.0.0_all.ipk",
+        "ipkHash": {
+          "sha256": "f1e1f9e8004f9a255308d7e0ceaaa6106c362d673127b328cf2babffc061beb9"
+        },
+        "ipkSize": 153316
+      }
+    }
+  ]
+}
