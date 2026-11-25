@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151719">
+  <title>TV Home — LG webOS</title>
+  <style>
+    :root{color-scheme:dark;--bg:#141619;--panel:#22262b;--muted:#aab0b8;--white:#f6f7f8;--blue:#58a9ff;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% 4%,#364a55 0,transparent 42%),linear-gradient(155deg,#222629,#121416 64%);color:var(--white);font:16px/1.5 "Segoe UI",Arial,sans-serif;min-height:100vh}
+    main{width:min(1020px,92vw);margin:0 auto;padding:70px 0 56px}.eyebrow{color:#b7c4cc;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    h1{margin:12px 0 12px;font-size:clamp(38px,7vw,72px);line-height:.98;letter-spacing:-.055em}.intro{max-width:710px;color:#d0d5d9;font-size:20px}
+    .card{margin-top:42px;padding:28px 32px;border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.075);box-shadow:0 18px 56px rgba(0,0,0,.18)}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.pill{padding:7px 12px;border-radius:18px;background:rgba(255,255,255,.1);color:#d6dde2;font-size:13px;white-space:nowrap}
+    h2{margin:0 0 9px;font-size:30px;letter-spacing:-.03em}.muted{color:var(--muted)}.steps{margin:22px 0 0;padding-left:24px}.steps li{padding:5px 0 5px 5px}.repo{display:block;overflow-wrap:anywhere;margin:16px 0;padding:15px 17px;border-radius:13px;background:#101214;color:#e8edf1;font:14px/1.5 Consolas,monospace;border:1px solid var(--line)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:0 18px;border:0;border-radius:14px;background:var(--blue);color:#071321;font-weight:700;text-decoration:none;cursor:pointer}.button.secondary{background:rgba(255,255,255,.12);color:var(--white)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .note{margin-top:20px;padding:15px 17px;border-left:3px solid #d3b06f;background:rgba(211,176,111,.08);color:#ded6c7;border-radius:0 12px 12px 0}.small{font-size:14px}.footer{margin-top:28px;color:#9299a0;font-size:13px}.footer a{color:#c3dfff}
+    @media(max-width:600px){main{padding-top:42px}.card{padding:22px 19px}.card-head{display:block}.pill{display:inline-block;margin-top:8px}.intro{font-size:18px}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">For LG webOS TVs</div>
+    <h1>A new home<br>for your TV.</h1>
+    <p class="intro">Install APL Launcher from Homebrew for an Apple TV style dock, app grid, folders and cinematic Top Shelf. It installs alongside TV Home, so the original app stays available.</p>
+
+    <section class="card" aria-labelledby="install-title">
+      <div class="card-head">
+        <div><h2 id="install-title">Install APL Launcher</h2><div class="muted">Add the catalog to Homebrew Channel on your TV.</div></div>
+        <span class="pill">Official Knikt release · v1.3.10</span>
+      </div>
+      <ol class="steps">
+        <li>Open <strong>Homebrew Channel</strong> on the TV and go to <strong>Settings → Repositories → Add Repository</strong>.</li>
+        <li>Enter this feed address, save it, then refresh the app list.</li>
+      </ol>
+      <code class="repo" id="feed">https://sono14.github.io/tv-home-hb-repo/apps.json</code>
+      <div class="actions">
+        <button class="button" id="copy" type="button">Copy Homebrew address</button>
+        <a class="button secondary" href="https://github.com/Knikt/APL-Launcher">Project on GitHub</a>
+        <a class="button secondary" href="apps.json">View Homebrew catalog</a>
+      </div>
+      <ol class="steps" start="3">
+        <li>Select <strong>APL Launcher</strong> and choose <strong>Install</strong>.</li>
+        <li>Open APL Launcher from the TV’s app list. If LG asks for permission to control the TV, choose <strong>Allow</strong>.</li>
+      </ol>
+      <div class="note"><strong>Compatibility note:</strong> APL Launcher supports LG webOS, but its project does not list webOS 4.5 as a tested TV version. If it does not start, TV Home remains installed. Without root, the TV’s Home button still opens LG Home.</div>
+    </section>
+
+    <p class="footer">The catalog URL is meant for Homebrew Channel. Opening <a href="apps.json">apps.json</a> in a regular browser displays raw JSON; that is normal. APL Launcher is an independent open-source project by <a href="https://github.com/Knikt/APL-Launcher">Knikt</a>.</p>
+  </main>
+  <script>
+    (function(){var button=document.getElementById("copy");button.addEventListener("click",function(){var text=document.getElementById("feed").textContent;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){button.textContent="Copied";});}else{button.textContent=text;}});}());
+  </script>
+</body>
+</html>
